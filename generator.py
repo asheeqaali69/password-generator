@@ -25,3 +25,5 @@ use_special = st.checkbox("Include Special Charachters")
 if st.button("Generate Password"):
     password = generate_password(length, use_digits, use_special)
     st.write(f"Generated Password: `{password}`")
+
+    
