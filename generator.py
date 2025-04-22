@@ -81,7 +81,7 @@ if st.button("Generate Password"):
     password = generate_password(length, use_digits, use_special)
     st.write(f"Generated Password: `{password}`")
     
-    # Display password strength
+    
     strength_percentage, strength_level, color, feedback = evaluate_password_strength(password)
     
     st.write("### Password Strength")
