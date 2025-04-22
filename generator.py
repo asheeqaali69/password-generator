@@ -14,12 +14,12 @@ def generate_password(length, use_digits, use_special):
 
     return ''.join(random.choice(characters) for _ in range(length))
 
-# New function to evaluate password strength
+
 def evaluate_password_strength(password):
     score = 0
     feedback = []
     
-    # Check length
+ 
     if len(password) >= 8:
         score += 1
     if len(password) >= 12:
@@ -27,34 +27,34 @@ def evaluate_password_strength(password):
     if len(password) >= 16:
         score += 1
     
-    # Check for uppercase
+   
     if re.search(r'[A-Z]', password):
         score += 1
     else:
         feedback.append("Add uppercase letters")
     
-    # Check for lowercase
+  
     if re.search(r'[a-z]', password):
         score += 1
     else:
         feedback.append("Add lowercase letters")
     
-    # Check for digits
+    
     if re.search(r'\d', password):
         score += 1
     else:
         feedback.append("Add numbers")
     
-    # Check for special characters
+    
     if re.search(r'[^A-Za-z0-9]', password):
         score += 1
     else:
         feedback.append("Add special characters")
     
-    # Calculate percentage
+    
     strength_percentage = (score / 7) * 100
     
-    # Determine strength level
+
     if strength_percentage < 40:
         strength_level = "Weak"
         color = "red"
@@ -82,7 +82,7 @@ if st.button("Generate Password"):
     password = generate_password(length, use_digits, use_special)
     st.write(f"Generated Password: `{password}`")
     
-    # Display password strength
+    
     strength_percentage, strength_level, color, feedback = evaluate_password_strength(password)
     
     st.write("### Password Strength")
